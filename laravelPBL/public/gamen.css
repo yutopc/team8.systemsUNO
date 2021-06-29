@@ -1,0 +1,115 @@
+/*ヘッダー*/
+.header{
+    background-color: rgb(139, 196, 241);
+    margin-right: 840px;
+    padding-left: 30px;
+    text-align:center
+}
+
+.botton_1{
+    width: 15%; 
+    padding: 20px; 
+    font-size:40px; 
+    background-color:salmon;
+}
+.botton_2{
+    width: 15%; 
+    padding: 20px; 
+    font-size:40px; 
+    background-color:skyblue;
+}
+
+/*A008 県内・県外ボタン
+  A009 はい・いいえボタン*/
+#yn{
+    margin-top: 100px;
+}
+
+
+/*A010　確認コード*/
+#move_code{
+    margin-top: 130px;
+    width: 25%; 
+    padding: 10px;
+}
+/*A010 確定ボタン*/
+#move_confirm{
+    width: 5%; 
+    padding: 10px; 
+    font-size:13px; 
+    background-color:rgb(219, 213, 130);
+}
+/*A012　確認コード*/
+#join_code{
+    margin-left: 45px;
+    margin-top: 15px;
+    width: 20%; 
+    padding: 25px;
+}
+
+/*A012 確定ボタン*/
+#join_confirm{
+    margin-left: 160px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    width: 5%; 
+    padding: 10px;
+    font-size:15px; 
+    background-color:rgb(230, 192, 91);
+}
+
+/*A013 確認ボタン*/
+#vari{
+    background-color: orange;
+    font-size: large;
+    font-family: 'ＭＳ ゴシック';
+    width: 150px;
+    height: 50px;
+    margin-left: 30px;
+}
+
+/*必須ボタン*/
+.mandatory{
+    background-color: #fa8c6b; 
+    font-size: small;
+}
+/*A013 注意書き*/
+.note{
+    font-size: small;
+}
+
+.text{
+    width: 14%; 
+    padding: 5px;
+}
+/*A014　受付の方と確認してください*/
+#messe{
+    padding-left: 76px;
+    padding-right: 75px;
+    background-color: #ff3c00;
+    color: white;
+}
+/*A014 訂正ボタン*/
+#miss{
+    margin-left: 30px;
+    width: 155px;
+    height: 65px;
+    font-size: large;
+    font-family: 'ＭＳ ゴシック';
+    background-color: powderblue;
+}
+/*A014 確定ボタン*/
+#last_confirm{
+    text-align:center;
+    margin-left: 30px;
+    width: 150px;
+    height: 60px;
+    font-size: large;
+    font-family: 'ＭＳ ゴシック';
+    background-color: rgb(255, 194, 103);
+}
+
+.number{
+    font-size: 30px;
+    margin-right: 840px;
+}
