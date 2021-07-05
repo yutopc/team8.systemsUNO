@@ -14,6 +14,7 @@ Route::get('/A012', [partiController::class, 'A012']);
 Route::get('/A013', [partiController::class, 'A013']);
 Route::get('/A014', [partiController::class, 'A014']);
 
+//先生側PC画面
 Route::get('/A003', [teacherController::class, 'A003']);
 Route::get('/A005', [teacherController::class, 'A005']);
 Route::get('/A006', [teacherController::class, 'A006']);

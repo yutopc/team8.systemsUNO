@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="{{ ('css/gamen.css') }}">
+        <link rel="stylesheet" href="{{ ('css/participant.css') }}">
         <title>A012</title>
     </head>
     <header class="header">
