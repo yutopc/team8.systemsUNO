@@ -25,7 +25,9 @@ function downloadCSV(name) {
 }
 $('#csv').click(function(){
     var file_name=prompt("保存するファイルの名前");
+    if(file_name!=null){
     downloadCSV(file_name);
+    }
 })
 
 $('body').on('click', '#finish', function() {
