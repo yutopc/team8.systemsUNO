@@ -9,37 +9,44 @@
 .botton_1{
     width: 15%; 
     padding: 20px; 
+    margin-left: 8px;
     font-size:40px; 
+    border-radius:30px;
     background-color:salmon;
 }
 .botton_2{
     width: 15%; 
     padding: 20px; 
     font-size:40px; 
+    border-radius:30px;
     background-color:skyblue;
 }
 
-/*A008 県内・県外ボタン
-  A009 はい・いいえボタン*/
-#yn{
+/*ボタン位置*/
+.yn{
     margin-top: 100px;
 }
+/*戻るボタン*/
+.back{
+    background-color:rgb(252, 252, 137);
+    border-radius: 100vh;
+}
 
-
-/*A010　確認コード*/
+/*A009　確認コード*/
 #move_code{
     margin-top: 130px;
     width: 25%; 
     padding: 10px;
 }
-/*A010 確定ボタン*/
+/*A009 確定ボタン*/
 #move_confirm{
     width: 5%; 
     padding: 10px; 
     font-size:13px; 
-    background-color:rgb(219, 213, 130);
+    background-color:rgb(255, 238, 0);
+    border-radius:30px;
 }
-/*A012　確認コード*/
+/*A011　確認コード*/
 #join_code{
     margin-left: 45px;
     margin-top: 15px;
@@ -47,7 +54,7 @@
     padding: 25px;
 }
 
-/*A012 確定ボタン*/
+/*A011 確定ボタン*/
 #join_confirm{
     margin-left: 160px;
     margin-top: 15px;
@@ -55,10 +62,11 @@
     width: 5%; 
     padding: 10px;
     font-size:15px; 
-    background-color:rgb(230, 192, 91);
+    background-color:rgb(255, 238, 0);
+    border-radius:30px;
 }
 
-/*A013 確認ボタン*/
+/*A012 確認ボタン*/
 #vari{
     background-color: orange;
     font-size: large;
@@ -73,7 +81,15 @@
     background-color: #fa8c6b; 
     font-size: small;
 }
-/*A013 注意書き*/
+/*A012 検索ボタン*/
+#search{
+    width: 5%; 
+    padding: 10px; 
+    font-size:15px; 
+    background-color:rgb(168, 184, 255);
+    border-radius:30px;
+}
+/*A012 注意書き*/
 .note{
     font-size: small;
 }
@@ -82,14 +98,18 @@
     width: 14%; 
     padding: 5px;
 }
-/*A014　受付の方と確認してください*/
+
+select{
+    background-color:skyblue;
+  }
+/*A013　受付の方と確認してください*/
 #messe{
     padding-left: 76px;
     padding-right: 75px;
     background-color: #ff3c00;
     color: white;
 }
-/*A014 訂正ボタン*/
+/*A013 訂正ボタン*/
 #miss{
     margin-left: 30px;
     width: 155px;
@@ -97,8 +117,9 @@
     font-size: large;
     font-family: 'ＭＳ ゴシック';
     background-color: powderblue;
+    border-radius:30px;
 }
-/*A014 確定ボタン*/
+/*A013 確定ボタン*/
 #last_confirm{
     text-align:center;
     margin-left: 30px;
@@ -107,6 +128,7 @@
     font-size: large;
     font-family: 'ＭＳ ゴシック';
     background-color: rgb(255, 194, 103);
+    border-radius:30px;
 }
 
 .number{

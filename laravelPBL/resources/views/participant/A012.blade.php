@@ -8,7 +8,7 @@
         <p>岡山情報ビジネス学院<br>オープンキャンパス参加者情報入力フォーム</p>
     </header>
     <body>
-        <a href="/team8.systemsUNO/laravelPBL/public/A010"><p>＜戻る<br></a>
+        <input type="button" onclick="history.back()" class="back" value="☜前画面へ戻る"><br>
         _____________情報を入力して下さい____________</p>
         <p><strong>1.参加者名</strong>&emsp;<span class="mandatory">必須</span><br>
         <input type="text" class="text" placeholder="例）山田" id="last_name">　
@@ -49,7 +49,7 @@
         　押して下の一覧から貴校名を選択して下さい。<br>
         <span class="note">※既卒の方も高校名を入力して下さい。</span><br>
         <input type="text" style="width: 20%; padding: 10px; font-size:15px;">　
-        <button type="button"  style="width: 5%; padding: 10px; font-size:15px; background-color:rgb(112, 137, 247);">検索</button><br>
+        <button type="button" id="search">検索</button><br>
         一覧<br>
         <div style="padding: 10px; margin-bottom: 10px; margin-right: 900px;border: 1px solid #333333;">
         <input type="radio" name="school" ><br>
