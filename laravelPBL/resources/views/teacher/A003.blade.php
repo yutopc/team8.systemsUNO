@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <link rel="stylesheet" type="text/css" href="./css/teacher.css">
     </head>
     <body>
+
       <header>
         <div class="cp_navi">
           <ul>
-              <li><a href="A005">CSV出力</a></li>
+              <li><a id="csv" herf='CSV'>CSV出力</a></li>
             <li>
               <a href="#">表示 <span class="caret"></span></a>
               <div>
@@ -18,8 +20,9 @@
                 </ul>
               </div>
             </li>
-            <li><a href="A006">承認</a></li>
+            <li><a id="approval">承認</a></li>
             <li><a href="A003">トップに戻る</a></li>
+
           </ul>
           </div>
 
@@ -35,7 +38,7 @@
 
       </header>
         <table border="1" id="participant_table">
-            <tr>
+            <tr class="th">
               <th>参加日</th>
               <th>参加者NO</th>
               <th>氏名</th>
@@ -48,7 +51,7 @@
               <th>合否</th>
               <th>詳細</th>
             </tr>
-            <tr>
+            <tr class="td">
               <td>2021/6/10</td>
               <td>0</td>
               <td>test</td>
@@ -61,7 +64,7 @@
               <td><button>登録</button></td>
               <td><button>詳細</button></td>
             </tr>
-            <tr>
+            <tr class="td">
               <td>2021/6/10</td>
               <td>0</td>
               <td>test</td>
@@ -74,7 +77,7 @@
               <td><button>登録</button></td>
               <td><button>詳細</button></td>
             </tr>
-            <tr>
+            <tr class="td">
               <td>2021/6/10</td>
               <td>0</td>
               <td>test</td>
@@ -87,7 +90,7 @@
               <td><button>登録</button></td>
               <td><button>詳細</button></td>
             </tr>
-            <tr>
+            <tr class="td">
               <td>2021/6/10</td>
               <td>0</td>
               <td>test</td>
@@ -100,7 +103,7 @@
               <td><button>登録</button></td>
               <td><button>詳細</button></td>
             </tr>
-            <tr>
+            <tr class="td">
               <td>2021/6/10</td>
               <td>0</td>
               <td>test</td>
@@ -114,5 +117,7 @@
               <td><button>詳細</button></td>
             </tr>
           </table>
+          <script src="../resources/js/teacher.js" ></script>
+
     </body>
 </html>
