@@ -28,7 +28,7 @@
                     
                 </table>
             </div>
-            <form action="A003" method="POST">@csrf
+            <form action="A005" method="POST">@csrf
                 <div id="right_memo">
                     <p>メモ</p>
                     <textarea name="memo">{{$memo[0]->memo}}</textarea>

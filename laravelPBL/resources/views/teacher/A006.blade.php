@@ -6,7 +6,7 @@
     </head>
     <body>
         <h1>合否登録</h1>
-        <form action="A003" method="POST">@csrf
+        <form action="A006" method="POST">@csrf
         <div id="left_table">
         <div id="left">
         <p>項目１<br>

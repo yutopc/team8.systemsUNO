@@ -27,42 +27,45 @@ class teacherController extends Controller{
             $items=DB::select('select EntrantNo,Item1,Item2,Item3,Item4,Item5,ItemSub from passfail where EntrantNo=:E_No',array('E_No' => $E_No));
             return view('teacher.A006',['items'=>$items],['pass'=>$pass_memo]);
         }  
-        else if(Request::get('A005')){
-            $param =[
-                'id'=>Request::get('A005'),
-                'memo'=>Request::get('memo')];
-            DB::update('update participantinfo set Memo =:memo where EntrantNo = :id',$param);
-
-            $items = DB::select('select i.Entrant,p.EntrantNo,p.Name,p.School,p.Scyear,i.TargetAge,p.Entrant,i.Entry,i.Course from participant p,participantinfo i where p.EntrantNo=i.EntrantNo');
-
-            return view('teacher.A003',['items'=>$items]);
-        }
-        else{
-            $sum=(int)Request::get('q1')+(int)Request::get('q2')+(int)Request::get('q3')+(int)Request::get('q4')+(int)Request::get('q5');
-            $param =[
-                'id'=>Request::get('A006'),
-                'pass'=>Request::get('Pass'),
-                'item1'=>Request::get('q1'),
-                'item2'=>Request::get('q2'),
-                'item3'=>Request::get('q3'),
-                'item4'=>Request::get('q4'),
-            'item5'=>Request::get('q5'),
-        'itemsub'=>$sum ];
-            
-          
-            DB::update('update passfail set FailureMemo =:pass,Item1=:item1,Item2=:item2,Item3=:item3,Item4=:item4,Item5=:item5,ItemSub=:itemsub where EntrantNo = :id',$param);
-
-            $items = DB::select('select i.Entrant,p.EntrantNo,p.Name,p.School,p.Scyear,i.TargetAge,p.Entrant,i.Entry,i.Course from participant p,participantinfo i where p.EntrantNo=i.EntrantNo');
-
-            return view('teacher.A003',['items'=>$items]);
-        }
+        
+        
     
        
     }
     public function A005(){
         return view('teacher.A005');
     }
+    public function A005_post(){
+        $param =[
+            'id'=>Request::get('A005'),
+            'memo'=>Request::get('memo')];
+        DB::update('update participantinfo set Memo =:memo where EntrantNo = :id',$param);
+
+        $items = DB::select('select i.Entrant,p.EntrantNo,p.Name,p.School,p.Scyear,i.TargetAge,p.Entrant,i.Entry,i.Course from participant p,participantinfo i where p.EntrantNo=i.EntrantNo');
+
+        return view('teacher.A003',['items'=>$items]);
+    }
+
     public function A006(){
         return view('teacher.A006');
+    }
+    public function A006_post(){
+        $sum=(int)Request::get('q1')+(int)Request::get('q2')+(int)Request::get('q3')+(int)Request::get('q4')+(int)Request::get('q5');
+        $param =[
+            'id'=>Request::get('A006'),
+            'pass'=>Request::get('Pass'),
+            'item1'=>Request::get('q1'),
+            'item2'=>Request::get('q2'),
+            'item3'=>Request::get('q3'),
+            'item4'=>Request::get('q4'),
+        'item5'=>Request::get('q5'),
+    'itemsub'=>$sum ];
+        
+      
+        DB::update('update passfail set FailureMemo =:pass,Item1=:item1,Item2=:item2,Item3=:item3,Item4=:item4,Item5=:item5,ItemSub=:itemsub where EntrantNo = :id',$param);
+
+        $items = DB::select('select i.Entrant,p.EntrantNo,p.Name,p.School,p.Scyear,i.TargetAge,p.Entrant,i.Entry,i.Course from participant p,participantinfo i where p.EntrantNo=i.EntrantNo');
+
+        return view('teacher.A003',['items'=>$items]);
     }
 }
