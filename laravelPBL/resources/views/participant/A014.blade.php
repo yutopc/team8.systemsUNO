@@ -13,7 +13,7 @@
         <p>受付番号は<span style="font-size: 70px;
                                 background-color: rgb(255, 184, 92);
                                 margin-left :30px;
-                                margin-right :30px">111</span>です</p>
+                                margin-right :30px">{{$count}}</span>です</p>
         </div>
         <u><p><span style="font-size:large; margin: 30px;">受付の担当の方にこの番号を見せて下さい。</span></p></u>
     </body>
