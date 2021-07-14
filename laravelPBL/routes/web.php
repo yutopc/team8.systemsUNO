@@ -11,7 +11,9 @@ Route::get('/A009', [partiController::class, 'A009']);
 Route::get('/A010', [partiController::class, 'A010']);
 Route::get('/A011', [partiController::class, 'A011']);
 Route::get('/A012', [partiController::class, 'A012']);
+Route::post('/A012_1', [partiController::class, 'A012_1']);
 Route::get('/A013', [partiController::class, 'A013']);
+Route::post('/A013_1', [partiController::class, 'A013_1']);
 Route::get('/A014', [partiController::class, 'A014']);
 
 //先生側PC画面

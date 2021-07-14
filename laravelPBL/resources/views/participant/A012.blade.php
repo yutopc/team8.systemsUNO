@@ -8,62 +8,67 @@
         <p>岡山情報ビジネス学院<br>オープンキャンパス参加者情報入力フォーム</p>
     </header>
     <body>
-        <input type="button" onclick="history.back()" class="back" value="☜前画面へ戻る"><br>
+        <a href="A010"><input type="button" class="back" value="☜前画面へ戻る"></a><br>
         _____________情報を入力して下さい____________</p>
-        <p><strong>1.参加者名</strong>&emsp;<span class="mandatory">必須</span><br>
-        <input type="text" class="text" placeholder="例）山田" id="last_name">　
-        <input type="text" class="text" placeholder="太郎" id="first_name"><br>
-        <strong>ふりがな</strong>&emsp;<span class="mandatory">必須</span><br>
-        <input type="text" class="text" placeholder="例）やまだ" id="f_last">　
-        <input type="text" class="text" placeholder="たろう" id="f_first"><br></p>
-        <p><strong>2.参加学科</strong>&emsp;<span class="mandatory">必須</span><br>
-        <form id="department">
-            <select>
-                <option value="selected">参加する学科を選択してください。</option>
-                <option value="医療福祉事務学科">医療福祉事務学科</option>
-                <option value="診療情報管理士学科">診療情報管理士学科</option>
-                <option value="ホテル・ブライダル学科">ホテル・ブライダル学科</option>
-                <option value="経営アシスト学科">経営アシスト学科</option>
-                <option value="公務員学科">公務員学科</option>
-                <option value="公務員速習学科">公務員速習学科</option>
-                <option value="保育学科">保育学科</option>
-                <option value="情報スペシャリスト学科">情報スペシャリスト学科</option>
-                <option value="情報システム学科">情報システム学科</option>
-                <option value="ゲームクリエイター学科">ゲームクリエイター学科</option>
-                <option value="ゲームプログラマー学科">ゲームプログラマー学科</option>
-                <option value="データマーケター学科">データマーケター学科</option>
-                <option value="ネット・動画クリエイター学科">ネット・動画クリエイター学科</option>
-                <option value="CGデザイン学科">CGデザイン学科</option>
-            </select>
-        </form>
-        <p><strong>本日はどちらのコースに参加しますか？</strong>&emsp;<span class="mandatory">必須</span><br>
-        &thinsp;<input type="radio" name="course" value="フルコース">フルコース<br>
-        &thinsp;<input type="radio" name="course" value="ショートコース">ショートコース</p>
-        <p><strong>3.学校情報</strong>&emsp;<span class="mandatory">必須</span><br>
-        ・学年<br>
-        &thinsp;<input type="radio" name="rank" value="高校３年生">高校３年生<br>
-        &thinsp;<input type="radio" name="rank" value="高校２年生">高校２年生<br>
-        &thinsp;<input type="radio" name="rank" value="高校１年生">高校１年生<br>
-        &thinsp;<input type="radio" name="rank" value="既卒">既卒<br>
-        ・以下の入力欄に貴校名を入力後、検索ボタンを<br>
-        　押して下の一覧から貴校名を選択して下さい。<br>
-        <span class="note">※既卒の方も高校名を入力して下さい。</span><br>
-        <input type="text" style="width: 20%; padding: 10px; font-size:15px;">　
-        <button type="button" id="search">検索</button><br>
-        一覧<br>
-        <div style="padding: 10px; margin-bottom: 10px; margin-right: 900px;border: 1px solid #333333;">
-        <input type="radio" name="school" ><br>
-        <input type="radio" name="school"><br>
-        <input type="radio" name="school"><br>
-        </div>
-        高校名&thinsp;<input type="text" style="width: 20%; padding: 10px;"><br>
-        ・学科を入力して下さい<br>
-        学科　&thinsp;<input type="text" style="width: 20%; padding: 10px;" placeholder="例) 普通科"></p>
-        <p><strong>4.今日はどちらから来られましたか？</strong>&emsp;<span class="mandatory">必須</span><br>
-        <span class="note">※該当する地域を選択して下さい。</span><br>
-        <span class="note">※&nbsp;*&nbsp;が付いている地域は交通費支給対象地域です</span><br>
-        <form>
-            <select id="area">
+        <form action="A012_1" method="post">
+            @csrf
+            <p><strong>1.参加者名</strong>&emsp;<span class="mandatory">必須</span><br>
+            <input type="text" class="text" placeholder="例）山田太郎" name="Name"><br>
+
+
+            <p><strong>2.参加学科</strong>&emsp;<span class="mandatory">必須</span><br>
+                <select name="Entry">
+                    <option value="selected">参加する学科を選択してください。</option>
+                    <option value="医療福祉事務学科">医療福祉事務学科</option>
+                    <option value="診療情報管理士学科">診療情報管理士学科</option>
+                    <option value="ホテル・ブライダル学科">ホテル・ブライダル学科</option>
+                    <option value="経営アシスト学科">経営アシスト学科</option>
+                    <option value="公務員学科">公務員学科</option>
+                    <option value="公務員速習学科">公務員速習学科</option>
+                    <option value="保育学科">保育学科</option>
+                    <option value="情報スペシャリスト学科">情報スペシャリスト学科</option>
+                    <option value="情報システム学科">情報システム学科</option>
+                    <option value="ゲームクリエイター学科">ゲームクリエイター学科</option>
+                    <option value="ゲームプログラマー学科">ゲームプログラマー学科</option>
+                    <option value="データマーケター学科">データマーケター学科</option>
+                    <option value="ネット・動画クリエイター学科">ネット・動画クリエイター学科</option>
+                    <option value="CGデザイン学科">CGデザイン学科</option>
+                </select>
+
+
+            <p><strong>本日はどちらのコースに参加しますか？</strong>&emsp;<span class="mandatory">必須</span><br>
+            &thinsp;<input type="radio" name="Course" value="フルコース">フルコース<br>
+            &thinsp;<input type="radio" name="Course" value="ショートコース">ショートコース</p>
+            
+
+            <p><strong>3.学校情報</strong>&emsp;<span class="mandatory">必須</span><br>
+            ・学年<br>
+                &thinsp;<input type="radio" name="Scyear" value="高校３年生">高校３年生<br>
+                &thinsp;<input type="radio" name="Scyear" value="高校２年生">高校２年生<br>
+                &thinsp;<input type="radio" name="Scyear" value="高校１年生">高校１年生<br>
+                &thinsp;<input type="radio" name="Scyear" value="既卒">既卒<br>
+            ・以下の入力欄に貴校名を入力後、検索ボタンを<br>
+            　押して下の一覧から貴校名を選択して下さい。<br>
+            <span class="note">※既卒の方も高校名を入力して下さい。</span><br>
+            <input type="text" style="width: 20%; padding: 10px; font-size:15px;">　
+            <button type="button" id="search">検索</button><br>
+            一覧<br>
+            <div style="padding: 10px; margin-bottom: 10px; margin-right: 900px;border: 1px solid #333333;">
+            <input type="radio" name="sc" ><br>
+            <input type="radio" name="sc"><br>
+            <input type="radio" name="sc"><br>
+            </div>
+            高校名&thinsp;<input type="text" style="width: 20%; padding: 10px;" name="School"><br>
+
+
+            ・学科を入力して下さい<br>
+            学科　&thinsp;<input type="text" style="width: 20%; padding: 10px;" placeholder="例) 普通科" name="Department"></p>
+            <p><strong>4.今日はどちらから来られましたか？</strong>&emsp;<span class="mandatory">必須</span><br>
+            <span class="note">※該当する地域を選択して下さい。</span><br>
+            <span class="note">※&nbsp;*&nbsp;が付いている地域は交通費支給対象地域です</span><br>
+
+            <!--地域はDB保存無し-->
+            <select name="area">
                 <option value="">地域を選択して下さい</option>
                 <option value="岡山市">岡山市</option>
                 <option value="倉敷市">倉敷市</option>
@@ -91,15 +96,15 @@
                 <option value="新庄村">*新庄村</option>
                 <option value="鏡野町">*鏡野町</option>
                 <option value="西栗倉町">*西栗倉町</option>
-            </select>
-        </form>
+            </select></p>
 
-        <p><u>*県外からお越しの方</u><br>
-        <form id="address">
-            <select name=”address”>
+
+            <p><u>*県外からお越しの方</u><br>
+            <select name="area2">
                 <option value="">都道府県を選んでください。</option>
                 <optgroup label=北海道>
-                    <option value="北海道">北海道</option></optgroup>
+                    <option value="北海道">北海道</option>
+                </optgroup>
                 <optgroup label=東北地方>
                     <option value="青森県">青森県</option>
                     <option value="岩手県">岩手県</option>
@@ -160,14 +165,12 @@
                     <option value="鹿児島県">鹿児島県</option>
                     <option value="沖縄県">沖縄県</option>
                 </optgroup>
-            </select>
-        </form><br></p>
-        <p><u>市区町村を入力してください。</u><br>
-        <input type="text" class="text" id="city">
-        <input type="radio" name="rank" value="市">市/
-        <input type="radio" name="rank" value="区">区/
-        <input type="radio" name="rank" value="町">町/
-        <input type="radio" name="rank" value="村">村</p>
-        <p><button type="button" id="vari" >確認画面へ→</button></p>
+            </select><br></p>
+
+            
+            <p><u>市区町村を入力してください。</u><br>
+            <input type="text" class="text" placeholder="例）広島市" name="area3" ></p>
+            <p><input type="submit" id="vari" value="確認画面へ→"></p>
+        </form>
     </body>
 </html>
