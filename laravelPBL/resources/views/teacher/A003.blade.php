@@ -30,7 +30,9 @@
             <input type="checkbox" name=''>名前<input type="text" style="width:110px;">
             <input type="checkbox" name=''>参加者NO<input type="text" style="width:50px;">
             <input type="checkbox" name=''>参加日<input type="date" style="width:125px;">~<input type="date" style="width:125px;">
-            <input type="checkbox" name=''>参加学科<select><option></option><option>情報スペシャリスト学科</option><option>ネット・動画クリエイター学科</option></select>
+            <input type="checkbox" name=''>参加学科<select><option></option><option>医療福祉学科</option><option>診療情報管理士学科</option><option>ホテル・ブライダル学科</option><option>経営アシスト学科</option><option>公務員学科</option>
+            <option>公務員速修学科</option><option>保育学科</option><option>情報スペシャリスト学科</option><option>情報システム学科</option><option>ゲームクリエイター学科</option><option>ゲームプログラマー学科</option>
+            <option>データマーケター学科</option><option>CGデザイン学科</option><option>ネット・動画クリエイター学科</option></select>
             <input type="checkbox" name=''>参加回数<select><option></option><option>1回</option><option>2回</option><option>3回</option><option>3回以上</option></select><br>
             <input type="checkbox" name=''>入試対象年度<select><option>2022年</option><option>2023年</option></select>
             <input type="checkbox" name=''>高校<input type="text">
@@ -51,71 +53,22 @@
               <th>合否</th>
               <th>詳細</th>
             </tr>
-            <tr class="td">
-              <td>2021/6/10</td>
-              <td>0</td>
-              <td>test</td>
-              <td>test</td>
-              <td>3</td>
-              <td>2022</td>
-              <td>3</td>
-              <td>情報スペシャリスト</td>
-              <td>フル</td>
-              <td><button>登録</button></td>
-              <td><button>詳細</button></td>
-            </tr>
-            <tr class="td">
-              <td>2021/6/10</td>
-              <td>0</td>
-              <td>test</td>
-              <td>test</td>
-              <td>3</td>
-              <td>2022</td>
-              <td>3</td>
-              <td>情報スペシャリスト</td>
-              <td>フル</td>
-              <td><button>登録</button></td>
-              <td><button>詳細</button></td>
-            </tr>
-            <tr class="td">
-              <td>2021/6/10</td>
-              <td>0</td>
-              <td>test</td>
-              <td>test</td>
-              <td>3</td>
-              <td>2022</td>
-              <td>3</td>
-              <td>情報スペシャリスト</td>
-              <td>フル</td>
-              <td><button>登録</button></td>
-              <td><button>詳細</button></td>
-            </tr>
-            <tr class="td">
-              <td>2021/6/10</td>
-              <td>0</td>
-              <td>test</td>
-              <td>test</td>
-              <td>3</td>
-              <td>2022</td>
-              <td>3</td>
-              <td>情報スペシャリスト</td>
-              <td>フル</td>
-              <td><button>登録</button></td>
-              <td><button>詳細</button></td>
-            </tr>
-            <tr class="td">
-              <td>2021/6/10</td>
-              <td>0</td>
-              <td>test</td>
-              <td>test</td>
-              <td>3</td>
-              <td>2022</td>
-              <td>3</td>
-              <td>情報スペシャリスト</td>
-              <td>フル</td>
-              <td><button>登録</button></td>
-              <td><button>詳細</button></td>
-            </tr>
+            @foreach ($items as $item)
+           <tr class="td">
+               <td>{{$item->Entrant}}</td>
+               <td>{{$item->EntrantNo}}</td>
+               <td>{{$item->Name}}</td>
+               <td>{{$item->School}}</td>
+               <td>{{$item->Scyear}}</td>
+               <td>{{$item->TargetAge}}</td>
+               <td>{{$item->Entrant}}</td>
+               <td>{{$item->Entry}}</td>
+               <td>{{$item->Course}}</td>
+               <td><form action="A003" method="POST">@csrf<button type='submit' value='{{$item->EntrantNo}}' name='registration'>登録</button></form></td>
+               <td><form action="A003" method="POST">@csrf<button type='submit' value='{{$item->EntrantNo}}' name='details'>詳細</button></form></td>
+           </tr>
+           @endforeach
+
           </table>
           <script src="../resources/js/teacher.js" ></script>
 
