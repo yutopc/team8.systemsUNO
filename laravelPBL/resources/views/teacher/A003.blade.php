@@ -60,7 +60,7 @@
                <td>{{$item->Name}}</td>
                <td>{{$item->School}}</td>
                <td>{{$item->Scyear}}</td>
-               <td>{{$item->TargetAge}}</td>
+               <td>{{$item->TargetAge}}年度</td>
                <td>{{$item->Entrant}}</td>
                <td>{{$item->Entry}}</td>
                <td>{{$item->Course}}</td>
