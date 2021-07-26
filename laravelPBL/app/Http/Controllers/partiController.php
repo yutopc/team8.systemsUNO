@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\DB;
 
 class partiController extends Controller{
 
-
     public function A007(){
         return view('participant.A007');
     }
@@ -45,6 +44,18 @@ class partiController extends Controller{
         $area2 = $request -> area2;
         $area3 = $request -> area3;
 
+        $judg = 0;
+        switch($area){
+            case "津山町":
+            case "奈義町":
+            case "勝央町":
+            case "新見市":
+            case "真庭市":
+            case "新庄村":
+            case "鏡野町":
+            case "西栗倉町":
+                $judg = 1;
+         }
         return view('participant.A013',['Name'=>$Name,
                                         'Entry'=>$Entry,
                                         'Course'=>$Course,
@@ -53,33 +64,57 @@ class partiController extends Controller{
                                         'Department'=>$Department,
                                         'area'=>$area,
                                         'area2'=>$area2,
-                                        'area3'=>$area3]);
+                                        'area3'=>$area3,
+                                        'judg'=>$judg]);
     }
     public function A013(){
         return view('participant.A013');
     }
 
     public function A013_1(Request $request){
-        //受付番号発行
-        $now_date = date('md');
-        $count = 0;
-        $EntrantNo = "A".$now_date.$count;
+        //受付番号カウント
+        if(session()->has('count')){
+            $count = session('count');
+        }else{
+            $count = 0;
+        }
+        
+        $date = date('md');
+        $count++;
+        session(['count' => "$count"]);
+
+        $EntrantNo = "A".$date.$count; //参加者番号発行
+
+        $Entrant = date('Ymd');
+
+        $a = $request->Scyear;
+        if($a === "高校１年生"){
+            $TargetAge = date('Y', strtotime('+2 year'));
+        }elseif($a === "高校２年生"){
+            $TargetAge = date('Y', strtotime('+1 year'));
+        }elseif($a === "高校３年生" || $parti['Scyear'] === "既卒"){
+            $TargetAge = date('Y');
+        }
 
         $parti = [
                     'Name'=>$request->Name,
                     'School'=>$request->School,
                     'Department'=>$request->Department,
                     'Scyear'=>$request->Scyear,
-                    'EntrantNo' => $EntrantNo
+                    'EntrantNo' => $EntrantNo,
+                    'Entrant' => $Entrant
                 ];
+
         $parm = [
                     'EntrantNo' => $EntrantNo,
                     'Entry'=>$request->Entry,
-                    'Course'=>$request->Course
+                    'Course'=>$request->Course,
+                    'Entrant' => $Entrant,
+                    'TargetAge' => $TargetAge
                 ];
-                
-        DB::insert('insert into participant (Name,EntrantNo,School,Department,Scyear) values (:Name,:EntrantNo,:School,:Department,:Scyear)', $parti);
-        DB::insert('insert into participantinfo (EntrantNo,Entry,Course) values (:EntrantNo,:Entry,:Course)',$parm);
+        
+        DB::insert('insert into participant (Name,EntrantNo,School,Department,Scyear,Entrant) values (:Name,:EntrantNo,:School,:Department,:Scyear,:Entrant)', $parti);
+        DB::insert('insert into participantinfo (EntrantNo,Entrant,Entry,Course,TargetAge) values (:EntrantNo,:Entrant,:Entry,:Course,:TargetAge)',$parm);
         return view('participant.A014',['count'=>$count]);
     }
 
@@ -88,4 +123,5 @@ class partiController extends Controller{
         return view('participant.A014');
     }
 }
+
 

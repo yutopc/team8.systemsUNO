@@ -31,20 +31,25 @@
             @endif
             @if($area2 != '')
                 <input type="text" class="text" name="area2" value="{{$area2}}"></p>
-            @endif
-            @if($area3 != '')
-                <p><input type="text" class="text" name="area3" value="{{$area3}}"></p>
+                @if($area3 != '')
+                    <p><input type="text" class="text" name="area3" value="{{$area3}}"></p>
+                    <!--交通費支給対象の場合-->
+                    <div　id="target">
+                        <p><span style="background-color: #e4e004;">
+                        <font color="blue">交通費支給対象地域です。<br>案内をして下さい。&emsp;&emsp;&emsp;</fon</span></p>
+                    </div>
+                @endif
             @endif
 
-            
+            @if($judg == 1)
             <!--交通費支給対象の場合-->
             <div　id="target">
                 <p><span style="background-color: #e4e004;">
-                <font color="blue">交通費支給対象地域です。<br>案内をして下さい。&emsp;&emsp;&emsp;</font>
-                </span></p>
+                <font color="blue">交通費支給対象地域です。<br>案内をして下さい。&emsp;&emsp;&emsp;</fon</span></p>
             </div>
+            @endif
             <input type="button" onclick="history.back()" id="miss" value="訂正する">
-            <input type="submit" id="last_confirm" value="確定">
+            <input type="submit" id="last_confirm"value="確定" >
         </form>
     </body>
 </html>
